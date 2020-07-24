@@ -113,6 +113,17 @@ def scout2():
     print ("Scout2 Audit done")
     return 0
 
+def scout():
+    """ this function calls Scout tool """
+    print("Started Scout Suite")
+    file_name = 'scout_report'
+    subprocess.call(['../scripts/scout_suite.sh',\
+                     '../../reports/AWS/aws_audit/%s/%s/%s' \
+                     %(account_name, timestmp, file_name)], cwd='tools')
+    print ("Scout Suite Audit done")
+    return 0
+
+
 def csv_to_json(file):
     """This function is used to convert prowler CSV output to common json"""
     csvfile = open(file, 'r')
@@ -343,8 +354,11 @@ def aws_audit():
     """ This function used for calling all the AWS audit functions"""
     subprocess.call(['mkdir', '-p', 'reports/AWS/aws_audit/%s/%s/final_report' % (account_name, timestmp)])
     subprocess.call(['mkdir', '-p', 'reports/AWS/aws_audit/%s/%s/delta' % (account_name, timestmp)])
+    
     p1 = Process(target=multi_threaded_prowler)
     p1.start()
+    p0 = Process(target=scout)
+    p0.start()
     p2 = Process(target=scout2)
     p2.start()
     p3 = Process(target=audit_aws_certs)
@@ -379,6 +393,7 @@ def aws_audit():
     p17.start()
     p18 = Process(target=trusted_advisor)
     p18.start()
+    p0.join()
     p1.join()
     p2.join()
     p3.join()
