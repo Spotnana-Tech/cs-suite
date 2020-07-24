@@ -55,12 +55,14 @@ optional arguments:
 ## Installation
 (in order to avoid missing with the already installed python libraries)
 
- - get project `git clone https://github.com/SecurityFTW/cs-suite.git &&
+ - get project `git clone https://github.com/Spotnana-Tech/cs-suite &&
 cd cs-suite/`   
  - install [virtualenv](https://virtualenv.pypa.io/en/latest/) `pip install virtualenv`
  - create a python 2.7 local enviroment `virtualenv -p python2.7 venv`  
  - activate the virtual enviroment `source venv/bin/activate` 
  - install project dependencies `pip install -r requirements.txt`
+ - install Scout Suite, ssh pass and aws cli.`python setup.py`
+ - Note: OSX users might face error due to on number of open file descriptors  `[Errno 8] nodename nor servname provided, or not known`. To solve this `run: $ulimit -Sn 1000`
  - run the tool via `python cs.py --help`
 
 ### AWS Configuration
@@ -124,7 +126,7 @@ To run DigitalOcean Audit - python cs.py -env digitalocean
 
 - The final AWS Audit report looks like below:
 
-![AWS Audit report](AWS_Audit_Report.png)
+![AWS Audit report](AWS_Audit_Report_With_Scout_Suite.png)
 
 - The final GCP Audit report looks like below:
 
@@ -166,6 +168,7 @@ docker run -v `pwd`/aws:/root/.aws -v `pwd`/reports:/app/reports securityftw/cs-
 [https://securityftw.github.io](https://securityftw.github.io)
 
 ## Thanks
+* Scout Suite - https://github.com/nccgroup/ScoutSuite
 * Scout2 - https://github.com/nccgroup/Scout2
 * Prowler - https://github.com/Alfresco/prowler
 * Lunar - https://github.com/lateralblast/lunar
