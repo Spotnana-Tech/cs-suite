@@ -62,8 +62,9 @@ cd cs-suite/`
  - activate the virtual enviroment `source venv/bin/activate` 
  - install project dependencies `pip install -r requirements.txt`
  - install Scout Suite, ssh pass and aws cli.`python setup.py`
- - Note: OSX users might face error due to on number of open file descriptors  `[Errno 8] nodename nor servname provided, or not known`. To solve this `run: $ulimit -Sn 1000`
- - run the tool via `python cs.py --help`
+ - **Note**: OSX users might face error due to on number of open file descriptors  `[Errno 8] nodename nor servname provided, or not known`. To solve this `run: $ulimit -Sn 1000`
+ - get the usage details of the tool via `python cs.py --help`
+ - to run aws audit `python cs.py -env aws`
 
 ### AWS Configuration
 - In AWS create a IAM user with at least the following policy `arn:aws:iam::aws:policy/ReadOnlyAccess` 
