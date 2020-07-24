@@ -42,6 +42,7 @@ optional arguments:
 ## Requirements
 * Operating System **OSX** or **Linux** only
 * python 2.7
+* python 3.5/3.6/3.7/3.8 (for Scout Suite)
 * pip
 * git
 * jq
