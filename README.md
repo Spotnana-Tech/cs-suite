@@ -61,7 +61,7 @@ cd cs-suite/`
  - create a python 2.7 local enviroment `virtualenv -p python2.7 venv`  
  - activate the virtual enviroment `source venv/bin/activate` 
  - install project dependencies `pip install -r requirements.txt`
- - install Scout Suite, ssh pass and aws cli.`python setup.py`
+ - install Scout Suite, ssh pass and aws cli. `python setup.py` ( Scout Suite needs python3.x. `setup.py` creates that. )
  - **Note**: OSX users might face error due to on number of open file descriptors  `[Errno 8] nodename nor servname provided, or not known`. To solve this `run: $ulimit -Sn 1000`
  - get the usage details of the tool via `python cs.py --help`
  - to run aws audit `python cs.py -env aws`
