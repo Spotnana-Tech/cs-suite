@@ -55,12 +55,13 @@ optional arguments:
 ## Installation
 (in order to avoid missing with the already installed python libraries)
 
- - get project `git clone https://github.com/SecurityFTW/cs-suite.git &&
+ - get project  `git clone https://github.com/SecurityFTW/cs-suite.git &&
 cd cs-suite/`   
  - install [virtualenv](https://virtualenv.pypa.io/en/latest/) `pip install virtualenv`
  - create a python 2.7 local enviroment `virtualenv -p python2.7 venv`  
  - activate the virtual enviroment `source venv/bin/activate` 
  - install project dependencies `pip install -r requirements.txt`
+ - `python setup.py` - configures aws cli, sshpass, creates virtual environment for ScoutSuite ( it needs Python3.x)
  - run the tool via `python cs.py --help`
 
 ### AWS Configuration
