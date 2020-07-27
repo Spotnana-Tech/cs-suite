@@ -16,7 +16,7 @@ def main():
         print ("Please enter your AWS credetionals")
         subprocess.call(['aws', 'configure'])
         print ("Installing Scout Suite")
-        subprocess.call(['sudo', 'tar', '-xvf', 'ScoutSuite.tar.xz'], cwd = './tools')
+        subprocess.call(['sudo', 'tar', '-xvf', 'ScoutSuite.tar.gz'], cwd = './tools')
         print("Setting up Scout Suite")
         subprocess.call(['../../scripts/setup_scout_suite.sh'],cwd='tools/ScoutSuite/')
     except:
