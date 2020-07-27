@@ -16,7 +16,7 @@ def main():
         print ("Please enter your AWS credetionals")
         subprocess.call(['aws', 'configure'])
         print("Setting up Scout Suite")
-        subprocess.call(['../scripts/setup_scout_suite.sh'],cwd='tools/ScoutSuite')
+        subprocess.call(['../../scripts/setup_scout_suite.sh'],cwd='tools/ScoutSuite/')
     except:
         print ("FAILED in one of the steps")
 
