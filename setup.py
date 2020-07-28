@@ -15,6 +15,10 @@ def main():
         subprocess.call(['sudo', 'make', 'install'], cwd='tools/sshpass-1.06/')
         print ("Please enter your AWS credetionals")
         subprocess.call(['aws', 'configure'])
+        print ("Installing Scout Suite")
+        subprocess.call(['sudo', 'tar', '-xvf', 'ScoutSuite.tar.gz'], cwd = './tools')
+        print("Setting up Scout Suite")
+        subprocess.call(['../../scripts/setup_scout_suite.sh'],cwd='tools/ScoutSuite/')
     except:
         print ("FAILED in one of the steps")
 
